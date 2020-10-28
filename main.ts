@@ -193,17 +193,17 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile8, function (sprite, location) {
-    tiles.setTilemap(tiles.createTilemap(hex`10008200030103010301030202030103010301030101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101011e01010101010101011e010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101011e01010101010101011e0101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010104040404040405010105040404040404202020202020201c1d202020202020202020202020202018192020202020202020202033202020181920202033202020202020202020201819202020202020202020202020201c1f1f1d202020202020202020332020181f1f192020332020202020202020201a1f1f1b202020202020202020202020201819202020202020202020203320202018192020203320202020202020202020181920202020202020202020202020201a1b202020202020200f11111111110612120611111111111017170e131312121c1d1212120e131613161317170e1212181912121217160e130e171313121212181912121213130e13120e131312121218191212121313170e0f111111101212181912120f111111101515141516121218191212121617130e15141415130e12181912121213160e0e141415131612121819121212161317131515170e170e1218191212121216131614161313131212181912121213131712131713131612121819121212131316170f1110121212121819121212120f111016131312121212181912121212171313131716121212121a1b1212121213170e0909090909090a0c0b0a0909090909090909090909090a0b070a0909090909090909090909090a0c0c0a0909090909090909090909090a07070a0909090909090809080908090a0b070a0908090809080101010101010a0d0d0a010101010101010101010101010101010101010101012229212129210501010521292121292324040404040404040404040404040428240404040404042b2c04040404040428240404042904042a3004042904040428240404040404042a3004040404040428240404040404042a3004040404040428240404042904042a3004042904040428240404040404042a3004040404040428240404040404042a3004040404040428240404042904042a3004042904040428240404040404042a3004040404040428240404040404042a3004040404040428240404042904042a3004042904040428240404040404042a3004040404040428240404040404042a3004040404040428240404042904042a3004042904040428240404040404042a3004040404040428240404040404042a3004040404040428240404042904042a3004042904040428240404040404042a300404040404042824260d0d0d0d0d0d0d0d0d0d0d0d2628240404040404042a30040404040404282426260d0d0d0d0d0d0d0d0d0d262628240404040404042a3004040404040428242626260d0d0d0d0d0d0d0d26262628240404040404042a300404040404042824262626260d0d0d0d0d0d2626262628240404040404042a30040404040404282426262626260d0d0d0d262626262628240404040404042a3004040404040428242626262626260d0d262626262626282404042904292b31312c2904290404282404040404042a3131300404040404282404040404042a3131300404040404282404042904042a3131300404290404282404040404042a3131300404040404282404040404042a3131300404040404282404042904042a3131300404290404282404040404042d2e2e2f04040404042824040404040404040404040404040428240404040404040404040404040404282526322626322626262632262632262708080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808081212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212`, img`
+    tiles.setTilemap(tiles.createTilemap(hex`10008200030103010301030202030103010301030101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101011e01010101010101011e010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101011e01010101010101011e0101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010104040404040405010105040404040404202020202020201c1d202020202020202020202020202018192020202020202020202033202020181920202033202020202020202020201819202020202020202020202020201c1f1f1d202020202020202020332020181f1f192020332020202020202020201a1f1f1b202020202020202020202020201819202020202020202020203320202018192020203320202020202020202020181920202020202020202020202020201a1b202020202020200f11111111110612120611111111111017170e131312121c1d1212120e131613161317170e1212181912121217160e130e171313121212181912121213130e13120e131312121218191212121313170e0f111111101212181912120f111111101515141516121218191212121617130e15141415130e12181912121213160e0e141415131612121819121212161317131515170e170e1218191212121216131614161313131212181912121213131712131713131612121819121212131316170f1110121212121819121212120f111016131312121212181912121212171313131716121212121a1b1212121213170e0909090909090a0c0b0a0909090909090909090909090a0b070a0909090909090909090909090a0c0c0a0909090909090909090909090a07070a0909090909090809080908090a0b070a0908090809080101010101010a0d0d0a010101010101010101010101010101010101010101012229212129210501010521292121292324040404040404040404040404040428240404040404042b2c04040404040428240404042904042a3004042904040428240404040404042a3004040404040428240404040404042a3004040404040428240404042904042a3004042904040428240404040404042a3004040404040428240404040404042a3004040404040428240404042904042a3004042904040428240404040404042a3004040404040428240404040404042a3004040404040428240404042904042a3004042904040428240404040404042a3004040404040428240404040404042a3004040404040428240404042904042a3004042904040428240404040404042a3004040404040428240404040404042a3004040404040428240404042904042a3004042904040428240404040404042a300404040404042824260d0d0d0d0d0d0d0d0d0d0d0d2628240404040404042a30040404040404282426260d0d0d0d0d0d0d0d0d0d262628240404040404042a3004040404040428242626260d0d0d0d0d0d0d0d26262628240404040404042a300404040404042824262626260d0d0d0d0d0d2626262628240404040404042a30040404040404282426262626260d0d0d0d262626262628240404040404042a3004040404040428242626262626260d0d262626262626282404042904292b31312c2904290404282404040404042a3131300404040404282404040404042a3131300404040404282404042904042a3131300404290404282404040404042a3131300404040404282404040404042a3131300404040404282404042904042a3131300404290404282404040404042d2e2e2f04040404042824040404040404040404040404040428240404040404040404040404040404282526322626322626262632262632262708080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010122212121212121230101010101010101243537353535352801010101010101012435353535353528010101010101010124353535353535280101010101010101243535353535362801010101010101012436353535353628010101010101010125262634342626270101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212`, img`
         ................
         ................
         ................
+        ..222......222..
+        ..2.2......2.2..
         ................
         ................
         ................
-        ................
-        ................
-        ................
-        ................
+        ..222......222..
+        ..2.2......2.2..
         ................
         ................
         ................
@@ -293,6 +293,8 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile8, function (sprite, location
         ................
         ................
         ................
+        .....2..222.....
+        .....2..........
         ................
         ................
         ................
@@ -322,11 +324,216 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile8, function (sprite, location
         ................
         ................
         ................
-        ................
-        ................
-        `, [myTiles.transparency16,sprites.builtin.brick,sprites.dungeon.stairNorth,sprites.castle.saplingOak,sprites.dungeon.floorLight0,myTiles.tile12,myTiles.tile15,sprites.dungeon.floorLight4,sprites.builtin.forestTiles0,myTiles.tile16,sprites.castle.rock0,sprites.dungeon.floorLight1,sprites.dungeon.floorLightMoss,sprites.dungeon.stairSouth,myTiles.tile13,sprites.builtin.forestTiles1,sprites.builtin.forestTiles3,sprites.builtin.forestTiles2,sprites.castle.tileGrass1,sprites.castle.tileGrass2,sprites.castle.tileDarkGrass3,sprites.castle.tileDarkGrass2,myTiles.tile1,myTiles.tile14,sprites.castle.tilePath4,sprites.castle.tilePath6,sprites.castle.tilePath7,sprites.castle.tilePath9,sprites.castle.tilePath1,sprites.castle.tilePath3,sprites.builtin.forestTiles17,sprites.castle.tilePath5,sprites.castle.tileGrass3,sprites.dungeon.greenOuterNorth0,sprites.dungeon.greenOuterNorthWest,sprites.dungeon.greenOuterNorthEast,sprites.dungeon.greenOuterWest0,sprites.dungeon.greenOuterSouthEast,sprites.dungeon.greenOuterSouth1,sprites.dungeon.greenOuterSouthWest,sprites.dungeon.greenOuterEast0,sprites.dungeon.greenOuterNorth2,sprites.dungeon.darkGroundWest,sprites.dungeon.darkGroundNorthWest0,sprites.dungeon.darkGroundNorthEast0,sprites.dungeon.darkGroundSouthWest0,sprites.dungeon.darkGroundSouth,sprites.dungeon.darkGroundSouthEast0,sprites.dungeon.darkGroundEast,sprites.dungeon.darkGroundCenter,sprites.dungeon.greenOuterSouth2,myTiles.tile10], TileScale.Sixteen))
+        `, [myTiles.transparency16,sprites.builtin.brick,sprites.dungeon.stairNorth,sprites.castle.saplingOak,sprites.dungeon.floorLight0,myTiles.tile12,myTiles.tile15,sprites.dungeon.floorLight4,sprites.builtin.forestTiles0,myTiles.tile16,sprites.castle.rock0,sprites.dungeon.floorLight1,sprites.dungeon.floorLightMoss,sprites.dungeon.stairSouth,myTiles.tile13,sprites.builtin.forestTiles1,sprites.builtin.forestTiles3,sprites.builtin.forestTiles2,sprites.castle.tileGrass1,sprites.castle.tileGrass2,sprites.castle.tileDarkGrass3,sprites.castle.tileDarkGrass2,myTiles.tile1,myTiles.tile14,sprites.castle.tilePath4,sprites.castle.tilePath6,sprites.castle.tilePath7,sprites.castle.tilePath9,sprites.castle.tilePath1,sprites.castle.tilePath3,sprites.builtin.forestTiles17,sprites.castle.tilePath5,sprites.castle.tileGrass3,sprites.dungeon.greenOuterNorth0,sprites.dungeon.greenOuterNorthWest,sprites.dungeon.greenOuterNorthEast,sprites.dungeon.greenOuterWest0,sprites.dungeon.greenOuterSouthEast,sprites.dungeon.greenOuterSouth1,sprites.dungeon.greenOuterSouthWest,sprites.dungeon.greenOuterEast0,sprites.dungeon.greenOuterNorth2,sprites.dungeon.darkGroundWest,sprites.dungeon.darkGroundNorthWest0,sprites.dungeon.darkGroundNorthEast0,sprites.dungeon.darkGroundSouthWest0,sprites.dungeon.darkGroundSouth,sprites.dungeon.darkGroundSouthEast0,sprites.dungeon.darkGroundEast,sprites.dungeon.darkGroundCenter,sprites.dungeon.greenOuterSouth2,myTiles.tile10,sprites.builtin.field1,sprites.dungeon.floorLight2,sprites.castle.saplingPine,sprites.dungeon.chestClosed], TileScale.Sixteen))
     tiles.placeOnTile(mySprite, tiles.getTileLocation(6, 10))
     scene.setBackgroundColor(13)
+    Royal_House = sprites.create(img`
+        ....................8a8aa8a8....................
+        .................aaa888aa8a8aaa.................
+        ..............aaa8aa8a8aa888aa8aaa..............
+        ...........8aa8aa8888a8aa8a8888aa8aa8...........
+        ........8888aa8aa8aa8a8aa8a8aa8aa8aa8888........
+        .....aaa8aa8aa8888aa8a8aa8a8aa8888aa8aa8aaa.....
+        ...aa8888aa8aa8aa8aa888aa888aa8aa8aa8aa8888aa...
+        dccaa8aa8aa8888aa8aa8a8aa8a8aa8aa8888aa8aa8aaccd
+        bcb888aa8aa8aa8aa8aa8a8aa8a8aa8aa8aa8aa8aa888bcb
+        dbbaa8aa8888aa8aa8888a8aa8a8888aa8aa8888aa8aabbd
+        dbbaa8aa8aa8aa8888aa8a8aa8a8aa8888aa8aa8aa8aabbd
+        dccaa8888aa8aa8aa8aa888aa888aa8aa8aa8aa8888aaccd
+        bcbaa8aa8aa8888aa8aa8a8aa8a8aa8aa8888aa8aa8aabcb
+        dbb888aa8aa8aa8aa8aa8a8aa8a8aa8aa8aa8aa8aa888bbd
+        dbbaa8aa8888aa8aa8aa8a8aa8a8aa8aa8aa8888aa8aabbd
+        dccaa8aa8aa8aa8aa8888a8aa8a8888aa8aa8aa8aa8aaccd
+        bcbaa8888aa8aa8888aa888aa888aa8888aa8aa8888aabcb
+        dbbaa8aa8aa8888aa8aa8a8aa8a8aa8aa8888aa8aa8aabbd
+        dbb888aa8aa8aa8aa8aa8a8aa8a8aa8aa8aa8aa8aa888bbd
+        dccaa8aa8888aa8aa8aa8a8aa8a8aa8aa8aa8888aa8aaccd
+        bcbaa8aa8aa8aa8aa8aa888aa888aa8aa8aa8aa8aa8aabcb
+        dbbaa8888aa8aa8aa888ccbbbbcc888aa8aa8aa8888aabbd
+        dbbaa8aa8aa8aa888ccbbbbbbbbbbcc888aa8aa8aa8aabbd
+        dcc888aa8aa888ccbbbbbccccccbbbbbcc888aa8aa888ccd
+        bcbaa8aa888ccbbbbbccbddddddbccbbbbbcc888aa8aabcb
+        dbbaa8aaccbbbbbccbddddddddddddbccbbbbbccaa8aabbd
+        dbbaaccbbbbcccbddddddddddddddddddbcccbbbbccaabbd
+        dcccbbbbcccbdddbccbbbbbbbbbbbbccbdddbcccbbbbcccd
+        ccccccccbbbbbbbcbddddddddddddddbcbbbbbbbcccccccc
+        bddddddddddddbcddddddddddddddddddcbddddddddddddb
+        bbcbdddddddddcbd1111111111111111dbcdddddddddbcbb
+        bbbcccccccccccd1bbbbbbbbbbbbbbbb1dcccccccccccbbb
+        bbbbdddddddddc11beeeeeeeeeeeeeeb11cdddddddddbbbb
+        bbb8aaaaaaa8dc1be3b33b33b33b33beb1cd8aaaaaaa8bbb
+        bbb888888888dc1be3b33b33b33b33beb1cd888888888bbb
+        bbb833333338dcbbf3b3effffffe33bebbcd833333338bbb
+        bbb83ff3ff38dcbbf3bffffffffff3bebbcd83ff3ff38bbb
+        bbb83cc3cc38dcbbf3effffffffffebebbcd83cc3cc38bbb
+        bbb833333338dcbbf3eeeeeeeeeeeebebbcd833333338bbb
+        cbb83ff3ff38dcbbe3b33b33b33b33bebbcd83ff3ff38bbc
+        cbb83cc3cc38dcbbe3b33b33b33b33bebbcd83cc3cc38bbc
+        ccbbbbbbbbbbdcbbe3b33b33b33feeeebbcdbbbbbbbbbbcc
+        .cbbdddddddddcbbe3b33b33b33ffffebbcdddddddddbbc.
+        ..cbdbbbdbbbdcbbf3b33b33b33f33febbcdbbbdbbbdbc..
+        ...cdbbbdbbbdcbbf3b33b33b33bffeebbcdbbbdbbbdc...
+        ....bddddddddcbbf3b33b33b33b33bebbcddddddddb....
+        .....bdbbbdddcbbf3b33b33b33b33bebbcdddbbbdb.....
+        ......bcccbbbcbbe3b33b33b33b33bebbcbbbcccb......
+        `, SpriteKind.House)
+    tiles.placeOnTile(Royal_House, tiles.getTileLocation(3, 4))
+    Royal_House = sprites.create(img`
+        ....................8a8aa8a8....................
+        .................aaa888aa8a8aaa.................
+        ..............aaa8aa8a8aa888aa8aaa..............
+        ...........8aa8aa8888a8aa8a8888aa8aa8...........
+        ........8888aa8aa8aa8a8aa8a8aa8aa8aa8888........
+        .....aaa8aa8aa8888aa8a8aa8a8aa8888aa8aa8aaa.....
+        ...aa8888aa8aa8aa8aa888aa888aa8aa8aa8aa8888aa...
+        dccaa8aa8aa8888aa8aa8a8aa8a8aa8aa8888aa8aa8aaccd
+        bcb888aa8aa8aa8aa8aa8a8aa8a8aa8aa8aa8aa8aa888bcb
+        dbbaa8aa8888aa8aa8888a8aa8a8888aa8aa8888aa8aabbd
+        dbbaa8aa8aa8aa8888aa8a8aa8a8aa8888aa8aa8aa8aabbd
+        dccaa8888aa8aa8aa8aa888aa888aa8aa8aa8aa8888aaccd
+        bcbaa8aa8aa8888aa8aa8a8aa8a8aa8aa8888aa8aa8aabcb
+        dbb888aa8aa8aa8aa8aa8a8aa8a8aa8aa8aa8aa8aa888bbd
+        dbbaa8aa8888aa8aa8aa8a8aa8a8aa8aa8aa8888aa8aabbd
+        dccaa8aa8aa8aa8aa8888a8aa8a8888aa8aa8aa8aa8aaccd
+        bcbaa8888aa8aa8888aa888aa888aa8888aa8aa8888aabcb
+        dbbaa8aa8aa8888aa8aa8a8aa8a8aa8aa8888aa8aa8aabbd
+        dbb888aa8aa8aa8aa8aa8a8aa8a8aa8aa8aa8aa8aa888bbd
+        dccaa8aa8888aa8aa8aa8a8aa8a8aa8aa8aa8888aa8aaccd
+        bcbaa8aa8aa8aa8aa8aa888aa888aa8aa8aa8aa8aa8aabcb
+        dbbaa8888aa8aa8aa888ccbbbbcc888aa8aa8aa8888aabbd
+        dbbaa8aa8aa8aa888ccbbbbbbbbbbcc888aa8aa8aa8aabbd
+        dcc888aa8aa888ccbbbbbccccccbbbbbcc888aa8aa888ccd
+        bcbaa8aa888ccbbbbbccbddddddbccbbbbbcc888aa8aabcb
+        dbbaa8aaccbbbbbccbddddddddddddbccbbbbbccaa8aabbd
+        dbbaaccbbbbcccbddddddddddddddddddbcccbbbbccaabbd
+        dcccbbbbcccbdddbccbbbbbbbbbbbbccbdddbcccbbbbcccd
+        ccccccccbbbbbbbcbddddddddddddddbcbbbbbbbcccccccc
+        bddddddddddddbcddddddddddddddddddcbddddddddddddb
+        bbcbdddddddddcbd1111111111111111dbcdddddddddbcbb
+        bbbcccccccccccd1bbbbbbbbbbbbbbbb1dcccccccccccbbb
+        bbbbdddddddddc11beeeeeeeeeeeeeeb11cdddddddddbbbb
+        bbb8aaaaaaa8dc1be3b33b33b33b33beb1cd8aaaaaaa8bbb
+        bbb888888888dc1be3b33b33b33b33beb1cd888888888bbb
+        bbb833333338dcbbf3b3effffffe33bebbcd833333338bbb
+        bbb83ff3ff38dcbbf3bffffffffff3bebbcd83ff3ff38bbb
+        bbb83cc3cc38dcbbf3effffffffffebebbcd83cc3cc38bbb
+        bbb833333338dcbbf3eeeeeeeeeeeebebbcd833333338bbb
+        cbb83ff3ff38dcbbe3b33b33b33b33bebbcd83ff3ff38bbc
+        cbb83cc3cc38dcbbe3b33b33b33b33bebbcd83cc3cc38bbc
+        ccbbbbbbbbbbdcbbe3b33b33b33feeeebbcdbbbbbbbbbbcc
+        .cbbdddddddddcbbe3b33b33b33ffffebbcdddddddddbbc.
+        ..cbdbbbdbbbdcbbf3b33b33b33f33febbcdbbbdbbbdbc..
+        ...cdbbbdbbbdcbbf3b33b33b33bffeebbcdbbbdbbbdc...
+        ....bddddddddcbbf3b33b33b33b33bebbcddddddddb....
+        .....bdbbbdddcbbf3b33b33b33b33bebbcdddbbbdb.....
+        ......bcccbbbcbbe3b33b33b33b33bebbcbbbcccb......
+        `, SpriteKind.House)
+    tiles.placeOnTile(Royal_House, tiles.getTileLocation(12, 4))
+    Royal_House = sprites.create(img`
+        ....................8a8aa8a8....................
+        .................aaa888aa8a8aaa.................
+        ..............aaa8aa8a8aa888aa8aaa..............
+        ...........8aa8aa8888a8aa8a8888aa8aa8...........
+        ........8888aa8aa8aa8a8aa8a8aa8aa8aa8888........
+        .....aaa8aa8aa8888aa8a8aa8a8aa8888aa8aa8aaa.....
+        ...aa8888aa8aa8aa8aa888aa888aa8aa8aa8aa8888aa...
+        dccaa8aa8aa8888aa8aa8a8aa8a8aa8aa8888aa8aa8aaccd
+        bcb888aa8aa8aa8aa8aa8a8aa8a8aa8aa8aa8aa8aa888bcb
+        dbbaa8aa8888aa8aa8888a8aa8a8888aa8aa8888aa8aabbd
+        dbbaa8aa8aa8aa8888aa8a8aa8a8aa8888aa8aa8aa8aabbd
+        dccaa8888aa8aa8aa8aa888aa888aa8aa8aa8aa8888aaccd
+        bcbaa8aa8aa8888aa8aa8a8aa8a8aa8aa8888aa8aa8aabcb
+        dbb888aa8aa8aa8aa8aa8a8aa8a8aa8aa8aa8aa8aa888bbd
+        dbbaa8aa8888aa8aa8aa8a8aa8a8aa8aa8aa8888aa8aabbd
+        dccaa8aa8aa8aa8aa8888a8aa8a8888aa8aa8aa8aa8aaccd
+        bcbaa8888aa8aa8888aa888aa888aa8888aa8aa8888aabcb
+        dbbaa8aa8aa8888aa8aa8a8aa8a8aa8aa8888aa8aa8aabbd
+        dbb888aa8aa8aa8aa8aa8a8aa8a8aa8aa8aa8aa8aa888bbd
+        dccaa8aa8888aa8aa8aa8a8aa8a8aa8aa8aa8888aa8aaccd
+        bcbaa8aa8aa8aa8aa8aa888aa888aa8aa8aa8aa8aa8aabcb
+        dbbaa8888aa8aa8aa888ccbbbbcc888aa8aa8aa8888aabbd
+        dbbaa8aa8aa8aa888ccbbbbbbbbbbcc888aa8aa8aa8aabbd
+        dcc888aa8aa888ccbbbbbccccccbbbbbcc888aa8aa888ccd
+        bcbaa8aa888ccbbbbbccbddddddbccbbbbbcc888aa8aabcb
+        dbbaa8aaccbbbbbccbddddddddddddbccbbbbbccaa8aabbd
+        dbbaaccbbbbcccbddddddddddddddddddbcccbbbbccaabbd
+        dcccbbbbcccbdddbccbbbbbbbbbbbbccbdddbcccbbbbcccd
+        ccccccccbbbbbbbcbddddddddddddddbcbbbbbbbcccccccc
+        bddddddddddddbcddddddddddddddddddcbddddddddddddb
+        bbcbdddddddddcbd1111111111111111dbcdddddddddbcbb
+        bbbcccccccccccd1bbbbbbbbbbbbbbbb1dcccccccccccbbb
+        bbbbdddddddddc11beeeeeeeeeeeeeeb11cdddddddddbbbb
+        bbb8aaaaaaa8dc1be3b33b33b33b33beb1cd8aaaaaaa8bbb
+        bbb888888888dc1be3b33b33b33b33beb1cd888888888bbb
+        bbb833333338dcbbf3b3effffffe33bebbcd833333338bbb
+        bbb83ff3ff38dcbbf3bffffffffff3bebbcd83ff3ff38bbb
+        bbb83cc3cc38dcbbf3effffffffffebebbcd83cc3cc38bbb
+        bbb833333338dcbbf3eeeeeeeeeeeebebbcd833333338bbb
+        cbb83ff3ff38dcbbe3b33b33b33b33bebbcd83ff3ff38bbc
+        cbb83cc3cc38dcbbe3b33b33b33b33bebbcd83cc3cc38bbc
+        ccbbbbbbbbbbdcbbe3b33b33b33feeeebbcdbbbbbbbbbbcc
+        .cbbdddddddddcbbe3b33b33b33ffffebbcdddddddddbbc.
+        ..cbdbbbdbbbdcbbf3b33b33b33f33febbcdbbbdbbbdbc..
+        ...cdbbbdbbbdcbbf3b33b33b33bffeebbcdbbbdbbbdc...
+        ....bddddddddcbbf3b33b33b33b33bebbcddddddddb....
+        .....bdbbbdddcbbf3b33b33b33b33bebbcdddbbbdb.....
+        ......bcccbbbcbbe3b33b33b33b33bebbcbbbcccb......
+        `, SpriteKind.House)
+    tiles.placeOnTile(Royal_House, tiles.getTileLocation(12, 9))
+    Royal_House = sprites.create(img`
+        ....................8a8aa8a8....................
+        .................aaa888aa8a8aaa.................
+        ..............aaa8aa8a8aa888aa8aaa..............
+        ...........8aa8aa8888a8aa8a8888aa8aa8...........
+        ........8888aa8aa8aa8a8aa8a8aa8aa8aa8888........
+        .....aaa8aa8aa8888aa8a8aa8a8aa8888aa8aa8aaa.....
+        ...aa8888aa8aa8aa8aa888aa888aa8aa8aa8aa8888aa...
+        dccaa8aa8aa8888aa8aa8a8aa8a8aa8aa8888aa8aa8aaccd
+        bcb888aa8aa8aa8aa8aa8a8aa8a8aa8aa8aa8aa8aa888bcb
+        dbbaa8aa8888aa8aa8888a8aa8a8888aa8aa8888aa8aabbd
+        dbbaa8aa8aa8aa8888aa8a8aa8a8aa8888aa8aa8aa8aabbd
+        dccaa8888aa8aa8aa8aa888aa888aa8aa8aa8aa8888aaccd
+        bcbaa8aa8aa8888aa8aa8a8aa8a8aa8aa8888aa8aa8aabcb
+        dbb888aa8aa8aa8aa8aa8a8aa8a8aa8aa8aa8aa8aa888bbd
+        dbbaa8aa8888aa8aa8aa8a8aa8a8aa8aa8aa8888aa8aabbd
+        dccaa8aa8aa8aa8aa8888a8aa8a8888aa8aa8aa8aa8aaccd
+        bcbaa8888aa8aa8888aa888aa888aa8888aa8aa8888aabcb
+        dbbaa8aa8aa8888aa8aa8a8aa8a8aa8aa8888aa8aa8aabbd
+        dbb888aa8aa8aa8aa8aa8a8aa8a8aa8aa8aa8aa8aa888bbd
+        dccaa8aa8888aa8aa8aa8a8aa8a8aa8aa8aa8888aa8aaccd
+        bcbaa8aa8aa8aa8aa8aa888aa888aa8aa8aa8aa8aa8aabcb
+        dbbaa8888aa8aa8aa888ccbbbbcc888aa8aa8aa8888aabbd
+        dbbaa8aa8aa8aa888ccbbbbbbbbbbcc888aa8aa8aa8aabbd
+        dcc888aa8aa888ccbbbbbccccccbbbbbcc888aa8aa888ccd
+        bcbaa8aa888ccbbbbbccbddddddbccbbbbbcc888aa8aabcb
+        dbbaa8aaccbbbbbccbddddddddddddbccbbbbbccaa8aabbd
+        dbbaaccbbbbcccbddddddddddddddddddbcccbbbbccaabbd
+        dcccbbbbcccbdddbccbbbbbbbbbbbbccbdddbcccbbbbcccd
+        ccccccccbbbbbbbcbddddddddddddddbcbbbbbbbcccccccc
+        bddddddddddddbcddddddddddddddddddcbddddddddddddb
+        bbcbdddddddddcbd1111111111111111dbcdddddddddbcbb
+        bbbcccccccccccd1bbbbbbbbbbbbbbbb1dcccccccccccbbb
+        bbbbdddddddddc11beeeeeeeeeeeeeeb11cdddddddddbbbb
+        bbb8aaaaaaa8dc1be3b33b33b33b33beb1cd8aaaaaaa8bbb
+        bbb888888888dc1be3b33b33b33b33beb1cd888888888bbb
+        bbb833333338dcbbf3b3effffffe33bebbcd833333338bbb
+        bbb83ff3ff38dcbbf3bffffffffff3bebbcd83ff3ff38bbb
+        bbb83cc3cc38dcbbf3effffffffffebebbcd83cc3cc38bbb
+        bbb833333338dcbbf3eeeeeeeeeeeebebbcd833333338bbb
+        cbb83ff3ff38dcbbe3b33b33b33b33bebbcd83ff3ff38bbc
+        cbb83cc3cc38dcbbe3b33b33b33b33bebbcd83cc3cc38bbc
+        ccbbbbbbbbbbdcbbe3b33b33b33feeeebbcdbbbbbbbbbbcc
+        .cbbdddddddddcbbe3b33b33b33ffffebbcdddddddddbbc.
+        ..cbdbbbdbbbdcbbf3b33b33b33f33febbcdbbbdbbbdbc..
+        ...cdbbbdbbbdcbbf3b33b33b33bffeebbcdbbbdbbbdc...
+        ....bddddddddcbbf3b33b33b33b33bebbcddddddddb....
+        .....bdbbbdddcbbf3b33b33b33b33bebbcdddbbbdb.....
+        ......bcccbbbcbbe3b33b33b33b33bebbcbbbcccb......
+        `, SpriteKind.House)
+    tiles.placeOnTile(Royal_House, tiles.getTileLocation(3, 9))
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.builtin.field1, function (sprite, location) {
+	
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.builtin.forestTiles22, function (sprite, location) {
     tiles.placeOnTile(mySprite, tiles.getTileLocation(83, 85))
@@ -392,10 +599,71 @@ scene.onOverlapTile(SpriteKind.Player, sprites.builtin.forestTiles22, function (
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.floorLight5, function (sprite, location) {
     tiles.placeOnTile(mySprite, tiles.getTileLocation(38, 46))
 })
+scene.onOverlapTile(SpriteKind.Player, sprites.builtin.forestTiles17, function (sprite, location) {
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(7, 104))
+    mySprite4 = sprites.create(img`
+        ...bbccccccbb...
+        ..bdddddddd1db..
+        .bddbbbbbbbbddb.
+        .cdb11111111bdc.
+        .cbcdbbbbbbdcbc.
+        .fbcc111111ccbf.
+        .fbcd111111dcbf.
+        f66cdd1111ddc66f
+        f66ccbbbbbbcc66f
+        fcbb33333333bbcf
+        fbb3333333333bbf
+        fbb3d111111d3bbf
+        fbd1111111111dbf
+        fdd1111111111ddf
+        fdd1111111111ddf
+        fdd1111111111ddf
+        fdd1111111111ddf
+        fdd11dbbbbd11ddf
+        cdbbddddddddbbdf
+        cbddddddddddddbc
+        cddddddddddddddc
+        .cccccccccccccc.
+        .fbbfbbbbbbfbbf.
+        ..ff........ff..
+        `, SpriteKind.Møbel)
+    tiles.placeOnTile(mySprite4, tiles.getTileLocation(5, 100))
+    mySprite5 = sprites.create(img`
+        ..cccccccccccccccccccccccccccc..
+        .bddddddddddddddddddddddddddddb.
+        cddddddddddddddddddddddddddddddc
+        cbbb3ddd33d3dddd3333dddd3d333bbc
+        cddddddddddddddddddddddddddddddc
+        cddddddddddddddddddddddddddddddc
+        cddddddddddddddddddddddddddddddc
+        cbb33dddd3bb33d33dd33ddd33333bbc
+        cddddddddddddddddddddddddddddddc
+        cddddddddddddddddddddddddddddddc
+        cddddddddddddddddddddddddddddddc
+        cb333dddd3db3dddddddd33333ddd3bc
+        cddddddddddddddddddddddddddddddc
+        cddddddddddddddddddddddddddddddc
+        cddddddddddddddddddddddddddddddc
+        cbbbbbb3333333dddd333d3dddd33bbc
+        cddddddddddddddddddddddddddddddc
+        cbddddddddddddddddddddddddddddbc
+        cbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbc
+        cbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbc
+        .cccccccccccccccccccccccccccccc.
+        ..cbbc....................cbbc..
+        ..c33c....................c33c..
+        ...cc......................cc...
+        `, SpriteKind.Møbel)
+    tiles.placeOnTile(mySprite5, tiles.getTileLocation(9, 99))
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     info.changeScoreBy(1)
     otherSprite.destroy(effects.blizzard, 100)
     music.magicWand.play()
+})
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile10, function (sprite, location) {
+    game.showLongText("What are YOU doing at my stand!?I only serve people with money. Get away peasant, or i'll report report you to the guards", DialogLayout.Bottom)
+    mySprite.say("Jesus Christ man!", 400)
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile5, function (sprite, location) {
     game.showLongText("You were ambushed by bandits on your way to the Capital. It's dangerous to go alone. ", DialogLayout.Bottom)
@@ -408,8 +676,10 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestOpen, function (spri
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorOpenNorth, function (sprite, location) {
     tiles.placeOnTile(mySprite, tiles.getTileLocation(89, 19))
 })
+let mySprite4: Sprite = null
 let mySprite5: Sprite = null
 let mySprite3: Sprite = null
+let Royal_House: Sprite = null
 let projectile: Sprite = null
 let Mana: Sprite = null
 let mySprite: Sprite = null
