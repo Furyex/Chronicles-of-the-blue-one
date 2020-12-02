@@ -81,7 +81,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairNorth, function (spr
         222..................................222....................................22222222222222
         222..................................2.2...................................222222222222222
         22..........................................................2.............2222222222222222
-        2......................................................................2222222222222222222
+        .......................................................................2222222222222222222
         22..............2....................................................222222222222222222222
         222.................................................................2222222222222222222222
         222...................................2...............................22222222222222222222
@@ -274,8 +274,22 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorOpenSouth, function (
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 	
 })
+statusbars.onStatusReached(StatusBarKind.EnemyHealth, statusbars.StatusComparison.LTE, statusbars.ComparisonType.Percentage, 50, function (status) {
+    statusbar.setColor(2, 0)
+    statusbar.setLabel("HP", 2)
+})
+function Mana2 () {
+    statusbar_2 = statusbars.create(20, 4, StatusBarKind.Magic)
+    statusbar_2.max = 20
+    statusbar_2.value = 3
+    statusbar_2.attachToSprite(mySprite, 0, 0)
+    statusbar_2.setColor(8, 0)
+    statusbar_2.setLabel("MP", 1)
+    statusbar_2.setBarBorder(1, 11)
+    statusbar_2.positionDirection(CollisionDirection.Top)
+}
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (info.score() > 0) {
+    if (statusbar_2.value > 0) {
         music.pewPew.play()
         if (controller.right.isPressed()) {
             projectile = sprites.createProjectileFromSprite(img`
@@ -297,7 +311,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
                 . . . . . . . . . . . . . . . . 
                 `, mySprite, 125, 0)
             projectile.startEffect(effects.fire, 5000)
-            info.changeScoreBy(-1)
+            statusbar_2.value += -1
         }
         if (controller.left.isPressed()) {
             projectile = sprites.createProjectileFromSprite(img`
@@ -319,7 +333,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
                 . . . . . . . . . . . . . . . . 
                 `, mySprite, -125, 0)
             projectile.startEffect(effects.fire, 5000)
-            info.changeScoreBy(-1)
+            statusbar_2.value += -1
         }
         if (controller.up.isPressed()) {
             projectile = sprites.createProjectileFromSprite(img`
@@ -341,7 +355,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
                 . . . . . . . . . . . . . . . . 
                 `, mySprite, 50, 50)
             projectile.startEffect(effects.fire, 5000)
-            info.changeScoreBy(-1)
+            statusbar_2.value += -1
         }
         if (controller.down.isPressed()) {
             projectile = sprites.createProjectileFromSprite(img`
@@ -363,7 +377,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
                 . . . . . . . . . . . . . . . . 
                 `, mySprite, 50, 50)
             projectile.startEffect(effects.fire, 5000)
-            info.changeScoreBy(-1)
+            statusbar_2.value += -1
         }
     } else {
         game.splash("You are out of mana")
@@ -1179,11 +1193,40 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
         `)
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile19, function (sprite, location) {
-    game.showLongText("I should go to the capital, not waste my time here", DialogLayout.Bottom)
-    tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 47))
+    if (info.score() > 0) {
+        game.showLongText("I should hurry and find the power that the King mentioned, so i can save the kingdom. ", DialogLayout.Top)
+        tiles.setTilemap(tiles.createTilemap(hex`1000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000`, img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, [myTiles.transparency16], TileScale.Sixteen))
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 0))
+    } else {
+        game.showLongText("I should go to the capital, not waste my time here", DialogLayout.Top)
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 47))
+    }
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.KingCrimson, function (sprite, otherSprite) {
-    tiles.coverAllTiles(myTiles.tile19, myTiles.tile20)
+    game.showLongText("Hey noob. You are slave. You will never become monkey. Bring me big banana from forest.", DialogLayout.Top)
+    info.changeScoreBy(1)
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(7, 84))
+    King.setFlag(SpriteFlag.Ghost, true)
+})
+statusbars.onZero(StatusBarKind.Health, function (status) {
+    mySprite.destroy()
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     mySprite.setImage(img`
@@ -1351,6 +1394,16 @@ scene.onOverlapTile(SpriteKind.Player, sprites.builtin.forestTiles22, function (
         `, SpriteKind.Guide)
     tiles.placeOnTile(mySprite6, tiles.getTileLocation(82, 83))
 })
+function HP_health () {
+    statusbar = statusbars.create(20, 4, StatusBarKind.Health)
+    statusbar.max = 5
+    statusbar.value = 5
+    statusbar.attachToSprite(mySprite, 6, 0)
+    statusbar.setColor(2, 13)
+    statusbar.setLabel("HP", 1)
+    statusbar.setBarBorder(1, 11)
+    statusbar.positionDirection(CollisionDirection.Top)
+}
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.floorLight5, function (sprite, location) {
     tiles.placeOnTile(mySprite, tiles.getTileLocation(38, 46))
 })
@@ -1385,7 +1438,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.builtin.forestTiles17, function (
     tiles.placeOnTile(mySprite4, tiles.getTileLocation(5, 100))
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-    info.changeScoreBy(1)
+    statusbar_2.value += 1
     otherSprite.destroy(effects.blizzard, 100)
     music.magicWand.play()
 })
@@ -1393,37 +1446,18 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile10, function (sprite, locatio
     game.showLongText("Why are YOU here? I only serve people with money. Get away you filthy peasant, or i'll call the guards. ", DialogLayout.Bottom)
     mySprite.say("Jesus Christ man!", 400)
 })
-scene.onOverlapTile(SpriteKind.Player, myTiles.tile20, function (sprite, location) {
-    game.showLongText("I should hurry and find the power that the King mentioned. ", DialogLayout.Bottom)
-    tiles.setTilemap(tiles.createTilemap(hex`1000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000`, img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, [myTiles.transparency16], TileScale.Sixteen))
-    tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 0))
-})
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile5, function (sprite, location) {
     game.showLongText("You were ambushed by bandits on your way to the Capital. It's dangerous to go alone. ", DialogLayout.Top)
     tiles.placeOnTile(mySprite, tiles.getTileLocation(25, 9))
+})
+sprites.onDestroyed(SpriteKind.Player, function (sprite) {
+    game.over(false)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairLarge, function (sprite, location) {
     tiles.placeOnTile(mySprite, tiles.getTileLocation(14, 47))
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestOpen, function (sprite, location) {
-    game.showLongText("Damn! Someones has already been here.", DialogLayout.Bottom)
+    game.showLongText("Damn! Someones has already been here.", DialogLayout.Top)
     tiles.placeOnTile(mySprite, tiles.getTileLocation(89, 2))
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorOpenNorth, function (sprite, location) {
@@ -1436,6 +1470,8 @@ let mySprite3: Sprite = null
 let Guard: Sprite = null
 let Housewife: Sprite = null
 let projectile: Sprite = null
+let statusbar_2: StatusBarSprite = null
+let statusbar: StatusBarSprite = null
 let GossipGirl: Sprite = null
 let Gossip_Girl: Sprite = null
 let Royal3: Sprite = null
@@ -1899,7 +1935,7 @@ tiles.setTilemap(tiles.createTilemap(hex`5a005a000606060606060606060606060606060
     222..................................222....................................22222222222222
     222..................................2.2...................................222222222222222
     22..........................................................2.............2222222222222222
-    2......................................................................2222222222222222222
+    .......................................................................2222222222222222222
     22..............2....................................................222222222222222222222
     222.................................................................2222222222222222222222
     222...................................2...............................22222222222222222222
@@ -1944,6 +1980,8 @@ tiles.setTilemap(tiles.createTilemap(hex`5a005a000606060606060606060606060606060
     2222222222222222222222222222..222222222222222222222222222222222222222222222222222222222222
     `, [myTiles.transparency16,sprites.castle.tileGrass1,sprites.castle.tileGrass3,sprites.castle.tileGrass2,sprites.castle.rock1,sprites.castle.rock0,sprites.builtin.forestTiles0,myTiles.tile2,sprites.castle.tilePath1,sprites.castle.tilePath4,sprites.castle.tilePath2,sprites.castle.tilePath7,sprites.castle.tilePath3,sprites.castle.tilePath5,myTiles.tile3,myTiles.tile4,myTiles.tile5,sprites.castle.tileDarkGrass3,myTiles.tile6,sprites.dungeon.hazardWater,sprites.castle.tileDarkGrass2,sprites.dungeon.greenOuterNorthWest,sprites.dungeon.greenOuterNorth0,sprites.dungeon.greenOuterNorthEast,sprites.dungeon.greenOuterEast1,sprites.dungeon.greenOuterNorth1,sprites.castle.saplingPine,myTiles.tile8,sprites.castle.tilePath8,sprites.castle.tilePath9,sprites.castle.tilePath6,sprites.dungeon.greenOuterWest0,sprites.builtin.forestTiles22,sprites.dungeon.floorLight2,sprites.dungeon.greenOuterEast0,sprites.dungeon.greenOuterWest1,sprites.dungeon.greenOuterSouthWest,sprites.dungeon.greenOuterSouth1,sprites.dungeon.greenOuterSouthEast,sprites.dungeon.greenOuterNorth2,sprites.dungeon.greenOuterWest2,sprites.dungeon.greenOuterEast2,sprites.dungeon.greenOuterSouth2,myTiles.tile9,sprites.dungeon.floorLight5,sprites.dungeon.chestOpen,sprites.dungeon.floorLight1,sprites.dungeon.floorLight0,sprites.dungeon.floorLightMoss,sprites.dungeon.floorLight4,sprites.dungeon.doorOpenNorth,myTiles.tile7,sprites.dungeon.floorDark1,sprites.dungeon.doorOpenSouth,myTiles.tile1,myTiles.tile17,myTiles.tile18,myTiles.tile19], TileScale.Sixteen))
 tiles.placeOnTile(mySprite, tiles.getTileLocation(5, 3))
+HP_health()
+Mana2()
 let mySprite2 = sprites.create(img`
     ....................e2e22e2e....................
     .................222eee22e2e222.................
@@ -1993,7 +2031,7 @@ let mySprite2 = sprites.create(img`
     ....644444444c66f4e44e44e44e44ee66c444444446....
     .....64eee444c66f4e44e44e44e44ee66c444eee46.....
     ......6ccc666c66e4e44e44e44e44ee66c666ccc6......
-    `, SpriteKind.Player)
+    `, SpriteKind.House)
 tiles.placeOnTile(mySprite2, tiles.getTileLocation(38, 44))
 for (let index = 0; index < 8; index++) {
     Mana = sprites.create(img`
@@ -2092,7 +2130,7 @@ for (let index = 0; index < 8; index++) {
     true
     )
 }
-info.setScore(3)
+info.setScore(0)
 forever(function () {
     music.playMelody("B A G A C5 B G A ", 170)
 })
