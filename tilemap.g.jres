@@ -104,6 +104,16 @@
         "mimeType": "image/x-mkcd-f4",
         "tilemapTile": true
     },
+    "tile21": {
+        "data": "hwQQABAAAAC3u7u7u7u7u7t3d3d3d3e3t7u7u7u7u7u7d3d3d3d3t7e7u7u7u7u7u3d3d3d3d7e3u7u7u7u7u7t3d3d3d3e3t7u7u7u7u7u7d3d3d3d3t7e7u7u7u7u7u3d3d3d3d7e3u7u7u7u7u7t3d3d3d3e3t7u7u7u7u7u7d3d3d3d3tw==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile22": {
+        "data": "hwQQABAAAAB3d7t3d3d3d3d3u3d3d3d3d7cRe3d3RXd3uxG7d3dFd3cRdxF3d1V0dxF3EXd3V3R3dxF3t3dXRXd3EXcbe3dVd3d3d3Fxd1d3d3d3F3d3d3d3e3d3d3d3d7exd3d3t3d3Fxd3RXcbe3d3cXdFd3Fxd3d3d1d0F3d3d3d3V3R3dw==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
     "level": {
         "id": "level",
         "mimeType": "application/mkcd-tilemap",
