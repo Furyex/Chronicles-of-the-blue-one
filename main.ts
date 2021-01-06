@@ -8,6 +8,8 @@ namespace SpriteKind {
     export const Queen = SpriteKind.create()
     export const KingCrimson = SpriteKind.create()
     export const Kee = SpriteKind.create()
+    export const Tree = SpriteKind.create()
+    export const Big_tree = SpriteKind.create()
 }
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorClosedEast, function (sprite, location) {
     game.showLongText("This is the dungeon. You probably shouldn't go in here.", DialogLayout.Top)
@@ -360,7 +362,8 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`tile19`, function (sprite, lo
             .e..eeee..eeee.e
             ..eeeee....eeeee
             eeeeeeee..eeeee.
-            `, SpriteKind.Player)
+            `, SpriteKind.Tree)
+        tiles.placeOnTile(Red_tree_brother, tiles.getTileLocation(14, 79))
         Blue_tree_brother = sprites.create(img`
             ..e...ee..e..ee.
             e..ee.efe.ee.efe
@@ -384,7 +387,8 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`tile19`, function (sprite, lo
             .e..eeee..eeee.e
             ..eeeee....eeeee
             eeeeeeee..eeeee.
-            `, SpriteKind.Player)
+            `, SpriteKind.Tree)
+        tiles.placeOnTile(Blue_tree_brother, tiles.getTileLocation(13, 78))
         Yellow_tree_brother = sprites.create(img`
             ..e...ee..e..ee.
             e..ee.efe.ee.efe
@@ -408,7 +412,8 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`tile19`, function (sprite, lo
             .e..eeee..eeee.e
             ..eeeee....eeeee
             eeeeeeee..eeeee.
-            `, SpriteKind.Player)
+            `, SpriteKind.Tree)
+        tiles.placeOnTile(Yellow_tree_brother, tiles.getTileLocation(12, 79))
         Gravekeeper_of_the_old_graveyard = sprites.create(img`
             .e...ee....ee.e.e.....e..
             .ee...ee..ee..e..ee.ee...
@@ -445,7 +450,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`tile19`, function (sprite, lo
             ...ee..e..ee.ee..eeeee...
             ....eeee.ee..ee..........
             .........e....eeeee......
-            `, SpriteKind.Player)
+            `, SpriteKind.Big_tree)
     } else {
         game.showLongText("I should go to the capital, not waste my time here", DialogLayout.Top)
         tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 47))
@@ -1308,6 +1313,9 @@ scene.onOverlapTile(SpriteKind.Player, sprites.builtin.forestTiles17, function (
         ..ff........ff..
         `, SpriteKind.Møbel)
     tiles.placeOnTile(mySprite4, tiles.getTileLocation(5, 100))
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`tile23`, function (sprite, location) {
+    tiles.replaceAllTiles(assets.tile`transparency16`, assets.tile`transparency16`)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     statusbar_2.value += 1
